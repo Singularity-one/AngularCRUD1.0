@@ -66,6 +66,7 @@ export class FindAllComponent implements OnInit {
   customerDetails(customerId:string){
     console.log(customerId);
     console.log("傳去customerService的id:"+customerId);
+    this.customerService.clear();//輸入前先清除舊訊息
     this.customerService.add(customerId);//傳給customerService
     this.router.navigate(['customer-details']); // <-- 導向CustomerDetailsComponent
   }
